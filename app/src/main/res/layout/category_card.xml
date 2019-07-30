@@ -1,7 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+<com.google.android.material.card.MaterialCardView
+    android:id="@+id/category_card"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_margin="@dimen/category_card_margin"
+    app:cardCornerRadius="@dimen/category_card_radius"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto">
 
-</LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/category_card_holder"
+        android:padding="@dimen/category_card_padding">
+
+        <TextView
+            tools:text="Basic"
+            android:id="@+id/category_card_name"
+            android:textSize="@dimen/category_card_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            tools:text="₹ 295638"
+            android:id="@+id/category_card_amount"
+            android:layout_below="@id/category_card_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>
