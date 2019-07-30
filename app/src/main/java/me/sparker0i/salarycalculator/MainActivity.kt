@@ -6,6 +6,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import me.sparker0i.salarycalculator.model.Category
 import me.sparker0i.salarycalculator.recyclerview.CardAdapter
 
@@ -26,6 +27,9 @@ class MainActivity : AppCompatActivity() {
         layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
 
+        val fab: ExtendedFloatingActionButton = findViewById(R.id.fab)
+        fab.setOnClickListener { showDialog() }
+
         adapter = CardAdapter()
         recyclerView.adapter = adapter
 
@@ -36,5 +40,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         model.getComponents().observe(this , categoryObserver)
+    }
+
+    fun showDialog() {
+
     }
 }

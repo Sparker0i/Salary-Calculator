@@ -18,12 +18,10 @@ class CardAdapter : RecyclerView.Adapter<CardAdapter.ViewHolder>() {
     private val components = mutableListOf<Category>()
 
     init {
-        for (i in 1..10) {
-            components.add(Salary("Basic" , 295368.0))
-        }
-        for (i in 1..10) {
-            components.add(Expenses("Insurance" , 100000.0))
-        }
+        for (i in 1..10)
+            components.add(Salary("Basic" , 295638.0))
+        for (i in 1..10)
+            components.add(Expenses("PF" , 35446.0))
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -46,7 +44,7 @@ class CardAdapter : RecyclerView.Adapter<CardAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         if (components.get(position).type == Type.NEGATIVE)
-            holder.layout.setBackgroundColor(Color.parseColor("#FF0000"))
+            holder.layout.setBackgroundColor(Color.parseColor("#C70C0C"))
         else if (components.get(position).type == Type.POSITIVE)
             holder.layout.setBackgroundColor(Color.parseColor("#239123"))
 
