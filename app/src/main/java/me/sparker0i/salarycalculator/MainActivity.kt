@@ -53,6 +53,15 @@ class MainActivity : AppCompatActivity() {
         }
 
         model.getComponents().observe(this , categoryObserver)
+
+        recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                if (dy < 0)
+                    fab.extend()
+                else if (dy > 0)
+                    fab.shrink()
+            }
+        })
     }
 
     fun showDialog() {
