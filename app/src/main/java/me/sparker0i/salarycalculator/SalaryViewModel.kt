@@ -13,6 +13,10 @@ class SalaryViewModel : ViewModel() {
 
     var components: MutableLiveData<MutableList<Category>> = MutableLiveData()
 
+    init {
+        components.value = mutableListOf()
+    }
+
     fun getComponents(): LiveData<MutableList<Category>> {
         return components
     }
@@ -22,6 +26,7 @@ class SalaryViewModel : ViewModel() {
     }
 
     fun addComponent(component: Category) {
+        println(component.name)
         components.value?.add(component)
         components.notifyObserver()
     }

@@ -9,20 +9,13 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import me.sparker0i.salarycalculator.R
 import me.sparker0i.salarycalculator.model.Category
-import me.sparker0i.salarycalculator.model.Expenses
-import me.sparker0i.salarycalculator.model.Salary
 import me.sparker0i.salarycalculator.model.Type
+
+
 
 class CardAdapter : RecyclerView.Adapter<CardAdapter.ViewHolder>() {
 
-    private val components = mutableListOf<Category>()
-
-    init {
-        for (i in 1..10)
-            components.add(Salary("Basic" , 295638.0))
-        for (i in 1..10)
-            components.add(Expenses("PF" , 35446.0))
-    }
+    private var components = mutableListOf<Category>()
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var componentName: TextView
@@ -54,5 +47,10 @@ class CardAdapter : RecyclerView.Adapter<CardAdapter.ViewHolder>() {
 
     override fun getItemCount(): Int {
         return components.size
+    }
+
+    fun setData(newData: MutableList<Category>) {
+        this.components = newData
+        notifyDataSetChanged()
     }
 }
